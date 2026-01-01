@@ -1,3 +1,4 @@
+# Difference from the original TorchSpatial repo
 numpy==2.4.0
 pandas==2.3.3
 torchvision==0.24.0
