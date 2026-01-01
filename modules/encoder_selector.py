@@ -13,16 +13,17 @@ ENCODER_REGISTRY: Dict[str, Union[type, Tuple[str, str]]] = {
     "Space2Vec-theory": ("..SpatialRelationEncoder.TheoryGridCellSpatialRelationLocationEncoder", "TheoryGridCellSpatialRelationLocationEncoder"),
     "xyz": ("..SpatialRelationEncoder.XYZSpatialRelationLocationEncoder", "XYZSpatialRelationLocationEncoder"),
     "NeRF": ("..SpatialRelationEncoder.NERFSpatialRelationLocationEncoder", "NERFSpatialRelationLocationEncoder"),
-    "Sphere2Vec-sphereC": ("..SpatialRelationEncoder.", ""),
-    "Sphere2Vec-sphereC+": ("..SpatialRelationEncoder.", ""),
-    "Sphere2Vec-sphereM": ("..SpatialRelationEncoder.", ""),
-    "Sphere2Vec-sphereM+": ("..SpatialRelationEncoder.", ""),
-    "Sphere2Vec-dfs": ("..SpatialRelationEncoder.", ""),
+    "Sphere2Vec-sphereC": ("..SpatialRelationEncoder.SphereSpatialRelationLocationEncoder", "SphereSpatialRelationLocationEncoder"),
+    "Sphere2Vec-sphereC+": ("..SpatialRelationEncoder.SphereGridSpatialRelationLocationEncoder", "SphereGridSpatialRelationLocationEncoder"),
+    "Sphere2Vec-sphereM": ("..SpatialRelationEncoder.SphereMixScaleSpatialRelationLocationEncoder", "SphereMixScaleSpatialRelationLocationEncoder"),
+    "Sphere2Vec-sphereM+": ("..SpatialRelationEncoder.SphereGridMixScaleSpatialRelationLocationEncoder", "SphereGridMixScaleSpatialRelationLocationEncoder"),
+    "Sphere2Vec-dfs": ("..SpatialRelationEncoder.DFTSpatialRelationLocationEncoder", "DFTSpatialRelationLocationEncoder"),
     "rbf": ("..SpatialRelationEncoder.RBFSpatialRelationLocationEncoder", "RBFSpatialRelationLocationEncoder"),
     "rff": ("..SpatialRelationEncoder.RFFSpatialRelationLocationEncoder", "RFFSpatialRelationLocationEncoder"),
-    "wrap": ("..SpatialRelationEncoder.", ""),
-    "wrap_ffn": ("..SpatialRelationEncoder.", ""),
-    "tile_ffn": ("..SpatialRelationEncoder.", "")
+    "wrap": ("..SpatialRelationEncoder.FCNet", "FCNet"),
+    "wrap_ffn": ("..SpatialRelationEncoder.AodhaFFNSpatialRelationLocationEncoder", "AodhaFFNSpatialRelationLocationEncoder"),
+    "tile_ffn": ("..SpatialRelationEncoder.GridLookupSpatialRelationLocationEncoder", "GridLookupSpatialRelationLocationEncoder"),
+    "Siren(SH)": ("..SpatialRelationEncoder.SphericalHarmonicsSpatialRelationLocationEncoder", "SphericalHarmonicsSpatialRelationLocationEncoder"),
 }
 
 def _resolve_encoder(name: str) -> type:

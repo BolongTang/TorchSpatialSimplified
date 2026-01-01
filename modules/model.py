@@ -11,7 +11,7 @@ class Model(nn.Module):
     def forward(self, image, raw_coord):
         encoded_image = self.image_encoder(image)
         encoded_coords = self.loc_encoder(raw_coord)
-        encoded_interacting_image_coords = np.mul(encoded_image, encoded_coords) # vector pointwise multiplication
+        encoded_interacting_image_coords = np.multiply(encoded_image, encoded_coords) # vector element-wise (Hadamard) multiplication
         category_index = self.decoder(encoded_interacting_image_coords)
         return category_index
 
