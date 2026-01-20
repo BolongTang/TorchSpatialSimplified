@@ -1,7 +1,7 @@
 from .encoder_selector import ENCODER_REGISTRY, _resolve_encoder, get_loc_encoder
 import unittest
-from ..SpatialRelationEncoder.GridCellSpatialRelationLocationEncoder import GridCellSpatialRelationLocationEncoder
-from ..SpatialRelationEncoder.XYZSpatialRelationLocationEncoder import XYZSpatialRelationLocationEncoder
+from ..location_encoders.GridCellSpatialRelationLocationEncoder import GridCellSpatialRelationLocationEncoder
+from ..location_encoders.XYZSpatialRelationLocationEncoder import XYZSpatialRelationLocationEncoder
 import torch
 
 # To run the tests: Go to the directory containing the TorchSpatial package and run this: (this is so that the relative imports can work)
@@ -12,13 +12,13 @@ class test_encoder_selector(unittest.TestCase):
     def test_ENCODER_REGISTRY_1(self):
         self.assertEqual(
             ENCODER_REGISTRY['xyz'], 
-            ("..SpatialRelationEncoder.XYZSpatialRelationLocationEncoder", "XYZSpatialRelationLocationEncoder")
+            ("..location_encoders.XYZSpatialRelationLocationEncoder", "XYZSpatialRelationLocationEncoder")
         )
 
     def test_ENCODER_REGISTRY_2(self):
         self.assertEqual(
             ENCODER_REGISTRY["Space2Vec-grid"], 
-            ("..SpatialRelationEncoder.GridCellSpatialRelationLocationEncoder", "GridCellSpatialRelationLocationEncoder")
+            ("..location_encoders.GridCellSpatialRelationLocationEncoder", "GridCellSpatialRelationLocationEncoder")
         )
 
     def test__resolve_encoder_1(self):

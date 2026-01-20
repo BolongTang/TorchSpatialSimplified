@@ -543,10 +543,10 @@ def load_dataset(
 
         # load observations
         train_locs, train_labels, train_feats = load_mosaiks_data(
-            data_dir, dataset_name, f"Y_{dataset_name}.csv", f"X_{dataset_name}.npy", "train"
+            data_dir, dataset_name, f"Y_{dataset_name}.csv", f"X_{dataset_name}.npy", "train", resample = True
         )
         val_locs, val_labels, val_feats = load_mosaiks_data(
-            data_dir, dataset_name, f"Y_{dataset_name}.csv", f"X_{dataset_name}.npy",eval_split
+            data_dir, dataset_name, f"Y_{dataset_name}.csv", f"X_{dataset_name}.npy",eval_split, resample = True
         )
         train_inds = np.arange(train_locs.shape[0])
         val_inds = np.arange(val_locs.shape[0])

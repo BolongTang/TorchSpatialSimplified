@@ -4,28 +4,28 @@ from typing import Any, Dict, Tuple, Union, Type
 # The entries' names are copied from the documentation.
 ENCODER_REGISTRY: Dict[str, Union[type, Tuple[str, str]]] = {
     # name: (module_path, class_name)
-    "Space2Vec-grid": ("..SpatialRelationEncoder.GridCellSpatialRelationLocationEncoder", "GridCellSpatialRelationLocationEncoder"),
-    "Space2Vec-theory": ("..SpatialRelationEncoder.TheoryGridCellSpatialRelationLocationEncoder", "TheoryGridCellSpatialRelationLocationEncoder"),
-    "xyz": ("..SpatialRelationEncoder.XYZSpatialRelationLocationEncoder", "XYZSpatialRelationLocationEncoder"),
-    "NeRF": ("..SpatialRelationEncoder.NERFSpatialRelationLocationEncoder", "NERFSpatialRelationLocationEncoder"),
-    "Sphere2Vec-sphereC": ("..SpatialRelationEncoder.SphereSpatialRelationLocationEncoder", "SphereSpatialRelationLocationEncoder"),
-    "Sphere2Vec-sphereC+": ("..SpatialRelationEncoder.SphereGridSpatialRelationLocationEncoder", "SphereGridSpatialRelationLocationEncoder"),
-    "Sphere2Vec-sphereM": ("..SpatialRelationEncoder.SphereMixScaleSpatialRelationLocationEncoder", "SphereMixScaleSpatialRelationLocationEncoder"),
-    "Sphere2Vec-sphereM+": ("..SpatialRelationEncoder.SphereGridMixScaleSpatialRelationLocationEncoder", "SphereGridMixScaleSpatialRelationLocationEncoder"),
-    "Sphere2Vec-dfs": ("..SpatialRelationEncoder.DFTSpatialRelationLocationEncoder", "DFTSpatialRelationLocationEncoder"),
-    "rbf": ("..SpatialRelationEncoder.RBFSpatialRelationLocationEncoder", "RBFSpatialRelationLocationEncoder"),
-    "rff": ("..SpatialRelationEncoder.RFFSpatialRelationLocationEncoder", "RFFSpatialRelationLocationEncoder"),
+    "Space2Vec-grid": ("..location_encoders.GridCellSpatialRelationLocationEncoder", "GridCellSpatialRelationLocationEncoder"),
+    "Space2Vec-theory": ("..location_encoders.TheoryGridCellSpatialRelationLocationEncoder", "TheoryGridCellSpatialRelationLocationEncoder"),
+    "xyz": ("..location_encoders.XYZSpatialRelationLocationEncoder", "XYZSpatialRelationLocationEncoder"),
+    "NeRF": ("..location_encoders.NERFSpatialRelationLocationEncoder", "NERFSpatialRelationLocationEncoder"),
+    "Sphere2Vec-sphereC": ("..location_encoders.SphereSpatialRelationLocationEncoder", "SphereSpatialRelationLocationEncoder"),
+    "Sphere2Vec-sphereC+": ("..location_encoders.SphereGridSpatialRelationLocationEncoder", "SphereGridSpatialRelationLocationEncoder"),
+    "Sphere2Vec-sphereM": ("..location_encoders.SphereMixScaleSpatialRelationLocationEncoder", "SphereMixScaleSpatialRelationLocationEncoder"),
+    "Sphere2Vec-sphereM+": ("..location_encoders.SphereGridMixScaleSpatialRelationLocationEncoder", "SphereGridMixScaleSpatialRelationLocationEncoder"),
+    "Sphere2Vec-dfs": ("..location_encoders.DFTSpatialRelationLocationEncoder", "DFTSpatialRelationLocationEncoder"),
+    "rbf": ("..location_encoders.RBFSpatialRelationLocationEncoder", "RBFSpatialRelationLocationEncoder"),
+    "rff": ("..location_encoders.RFFSpatialRelationLocationEncoder", "RFFSpatialRelationLocationEncoder"),
     "wrap": ("..modules.models", "FCNet"),
-    "wrap_ffn": ("..SpatialRelationEncoder.AodhaFFNSpatialRelationLocationEncoder", "AodhaFFNSpatialRelationLocationEncoder"),
-    "tile_ffn": ("..SpatialRelationEncoder.GridLookupSpatialRelationLocationEncoder", "GridLookupSpatialRelationLocationEncoder"),
-    "Siren(SH)": ("..SpatialRelationEncoder.SphericalHarmonicsSpatialRelationLocationEncoder", "SphericalHarmonicsSpatialRelationLocationEncoder"),
+    "wrap_ffn": ("..location_encoders.AodhaFFNSpatialRelationLocationEncoder", "AodhaFFNSpatialRelationLocationEncoder"),
+    "tile_ffn": ("..location_encoders.GridLookupSpatialRelationLocationEncoder", "GridLookupSpatialRelationLocationEncoder"),
+    "Siren(SH)": ("..location_encoders.SphericalHarmonicsSpatialRelationLocationEncoder", "SphericalHarmonicsSpatialRelationLocationEncoder"),
     # These below are not in the allowed options in tutorial.ipynb but Nemin says they can be implemented
     # Not supported by the current training implementation
-    "GridCellNorm": ("..SpatialRelationEncoder.GridCellNormSpatialRelationEncoder", "GridCellNormSpatialRelationEncoder"),
-    "HexagonGridCell": ("..SpatialRelationEncoder.HexagonGridCellSpatialRelationEncoder", "HexagonGridCellSpatialRelationEncoder"),
-    "Naive": ("..SpatialRelationEncoder.NaiveSpatialRelationEncoder", "NaiveSpatialRelationEncoder"),
-    "TheoryDiagGridCellSpatialRelationEncoder": ("..SpatialRelationEncoder.TheoryDiagGridCellSpatialRelationEncoder", "TheoryDiagGridCellSpatialRelationEncoder"),
-    "": ("..SpatialRelationEncoder.", ""),
+    "GridCellNorm": ("..location_encoders.GridCellNormSpatialRelationEncoder", "GridCellNormSpatialRelationEncoder"),
+    "HexagonGridCell": ("..location_encoders.HexagonGridCellSpatialRelationEncoder", "HexagonGridCellSpatialRelationEncoder"),
+    "Naive": ("..location_encoders.NaiveSpatialRelationEncoder", "NaiveSpatialRelationEncoder"),
+    "TheoryDiagGridCellSpatialRelationEncoder": ("..location_encoders.TheoryDiagGridCellSpatialRelationEncoder", "TheoryDiagGridCellSpatialRelationEncoder"),
+    "": ("..location_encoders.", ""),
 }
 
 def _resolve_encoder(name: str) -> type:
